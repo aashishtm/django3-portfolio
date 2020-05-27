@@ -1,0 +1,13 @@
+/* special-color-dark #263238 */
+
+.bgrd-special-dark {
+    background-color: #263238;
+}
+
+body {
+    padding-top: 56px;
+}
+
+#maincontent {
+    min-height: 100vh;
+}
