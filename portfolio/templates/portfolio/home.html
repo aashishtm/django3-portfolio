@@ -1,0 +1,31 @@
+{% extends "portfolio/main.html" %}
+{% block content%}
+{% load static %}
+
+ <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">A Warm Welcome!</h1>
+      <p class="lead">
+      I am Aashish Thapa Magar, student of Information Technology.
+      </p>
+      <a href="{% static 'portfolio/aashishcv.pdf' %}" class="btn btn-primary btn-lg">Get CV</a>
+    </header>
+
+    <!-- Project Card -->
+    <div class="row text-center">
+    {% for project in projects %}
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ project.image.url }}" alt="">
+          <div class="card-body">
+            <h4 class="card-title">{{ project.title }}</h4>
+            <p class="card-text">{{ project.description|truncatechars:100 }}</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Find Out More!</a>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}
