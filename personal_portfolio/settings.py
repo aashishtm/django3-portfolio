@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!!krd_w=7rlb3^-nuwp*5i98dqm9%3z0zt)q$feqqh))q7gw07'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['aashishtm.pythonanywhere.com']
 
 
 # Application definition
@@ -123,3 +123,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+try:
+    from .local_setting import *
+except ImportError:
+    print("No local setting found..")
